@@ -4,7 +4,12 @@ The project demonstrates basic CRUD examples using MongoDB and SpringBoot
 For this [tutorial](https://www.mongodb.com/compatibility/spring-boot), we need to create a Spring Boot project, which can be done easily using Spring Initialzr. It is advantageous to use an IDE (Integrated Development Environment) like Eclipse for this tutorial.
 
 # Project Setup
-Once the project is setup, we need to create Java class and fields that will be mapped into MongoDB collection and fields.
+Once the project is setup, we need to setup mongo connection uri and database which we will use in this project in the application.properties file
+
+	spring.data.mongodb.uri=mongodb+srv://<username>:<pwd>@<cluster>.mongodb.net/mygrocerylist
+	spring.data.mongodb.database=mygrocerylist
+
+and then, create Java class and fields that will be mapped into MongoDB collection and fields.
 
 For the API implementation, we use two approaches:
 1. MongoRepository - We demonstrate all the CRUD operations using this approach.
