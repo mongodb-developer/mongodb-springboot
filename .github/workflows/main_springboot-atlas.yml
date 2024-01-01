@@ -52,3 +52,69 @@ jobs:
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_A4C6F12EA248431DBF9A7CC3B0BFF262 }}
           package: '*.jar'
+  performance-test:
+    runs-on: ubuntu-latest
+    needs: deploy
+    steps: 
+      - name: BlazeRunnerAction
+      # You may pin to the exact commit or the version.
+      # uses: Blazemeter/github-action@2d9a0629ed1a08538193f4fc0e195c221071cffe
+      uses: Blazemeter/github-action@v8.2
+      with:
+        # API Key
+        apiKey: ${{secrets.BLZM_API_KEY}}
+        # API Secret
+        apiSecret: ${{secrets.BLZM_API_SECRET}}
+        # Test ID
+        testID: 13784895
+        # Test name for creating new test
+        # testName: # optional, default is 0
+        # Project ID
+        projectID: 2247424
+        # Start file for create test
+        # inputStartFile: # optional, default is null
+        # # Create test flag
+        # createTest: # optional, default is false
+        # # total users
+        # totalUsers: # optional, default is 20
+        # # duration
+        # duration: # optional, default is 20
+        # # rampup
+        # rampUp: # optional, default is 1
+        # # upload file
+        # uploadFileCheck: # optional, default is false
+        # # Continue Pipeline
+        # continuePipeline: # optional, default is true
+        # # multitests
+        # multiTests: # optional, default is false
+        # # functionaltest
+        # functionalTest: # optional, default is false
+        # # Data to be updated in JSON String format
+        # modelData: # optional, default is {}
+        # # env_variable
+        # envVariable: # optional, default is {}
+        # # showtaillog
+        # showTailLog: # optional, default is true
+        # # jmeterproperties
+        # jmeterProperties: # optional, default is null
+        # # report name
+        # reportName: # optional, default is null
+        # # notes
+        # notes: # optional, default is null
+        # # iterations_config
+        # iterationsConfig: # optional, default is false
+        # # iterations
+        # iterations: # optional, default is 1
+        # # upload dependency file
+        # inputAllFiles: # optional, default is null
+        # # test Run By Test Name
+        # testRunByTestName: # optional, default is false
+        # # job always success
+        # ignoreSLA: # optional, default is false
+        # # azure team web hook url
+        # webhookURL: # optional, default is null
+        # # azure team web hook url
+        # enablePublicReportURL: # optional, default is false
+        # # azure team web hook url for slack
+        # webhookURLSlack: # optional, default is null
+              
