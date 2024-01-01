@@ -22,6 +22,7 @@ jobs:
           java-version: '17'
 
       - name: Build with Maven
+        working-directory: ./mdb-spring-boot
         run: mvn clean install
 
       - name: Upload artifact for deployment job
