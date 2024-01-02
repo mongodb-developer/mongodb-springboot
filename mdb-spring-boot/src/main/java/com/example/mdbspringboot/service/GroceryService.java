@@ -46,9 +46,9 @@ public class GroceryService {
         // populate new value from request to existing object/entity/document
         customRepo.updateItemQuantity(item.getName(),item.getItemQuantity());
     }
-    @DeleteMapping("/employees/{id}")
-    public String deleteTask(String taskId){
-        groceryItemRepo.deleteById(taskId);
-        return taskId+" Grocery Item deleted from dashboard ";
+    @DeleteMapping("/items/{id}")
+    public String deleteTask(String itemid){
+        groceryItemRepo.deleteById(itemId);
+        return itemId+" Grocery Item deleted from dashboard ";
     }
 }
