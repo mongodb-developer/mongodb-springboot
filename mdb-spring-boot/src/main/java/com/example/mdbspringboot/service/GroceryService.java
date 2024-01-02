@@ -47,7 +47,7 @@ public class GroceryService {
         customRepo.updateItemQuantity(item.getName(),item.getItemQuantity());
     }
     @DeleteMapping("/items/{id}")
-    public String deleteTask(String itemid){
+    public String deleteTask(String itemId){
         groceryItemRepo.deleteById(itemId);
         return itemId+" Grocery Item deleted from dashboard ";
     }
