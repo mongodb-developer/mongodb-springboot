@@ -28,7 +28,7 @@ public class GroceryService {
     //CRUD  CREATE , READ , UPDATE , DELETE
 
     @PostMapping("/items")
-    public GroceryItem addItem(GroceryItem item) {
+    public GroceryItem addItem(@RequestBody GroceryItem item) {
         item.setId(UUID.randomUUID().toString().split("-")[0]);
         return groceryItemRepo.save(item);
     }
