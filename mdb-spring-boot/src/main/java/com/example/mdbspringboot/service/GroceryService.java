@@ -34,6 +34,11 @@ public class GroceryService {
     }
     @GetMapping("/items")
     public List<GroceryItem> findAllItems() {
+	    try {
+		    Thread.sleep(secondsToSleep * 1000);
+		} catch (InterruptedException ie) {
+		    Thread.currentThread().interrupt();
+		}
         return groceryItemRepo.findAll();
     }
     @GetMapping("/items/{id}")
