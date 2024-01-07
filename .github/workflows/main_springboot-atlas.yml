@@ -67,7 +67,7 @@ jobs:
           # API Secret
           apiSecret: ${{secrets.BLZM_API_SECRET}}
           # Test ID
-          testID: 13784895
+          testID: ${{secrets.BLZM_TEST_ID}}
           # Test name for creating new test
           # testName: # optional, default is 0
           # Project ID
