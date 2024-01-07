@@ -35,7 +35,7 @@ public class GroceryService {
     @GetMapping("/items")
     public List<GroceryItem> findAllItems() {
 	    try {
-		    Thread.sleep(1000);
+		    Thread.sleep(10);
 		} catch (InterruptedException ie) {
 		    Thread.currentThread().interrupt();
 		}
